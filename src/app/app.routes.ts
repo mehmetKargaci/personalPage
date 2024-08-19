@@ -25,5 +25,14 @@ export const routes: Routes = [
   {
     path:"my-projects",
     component: MyProjectsComponent,
+  },
+  {
+    path: "calculator",
+    loadChildren: () => import('./modules/calculator/calc.module').then(m => m.CalcModule)
+  },
+  {
+    path: "sudoku",
+    loadChildren: () => import('./modules/sudoku/sudoku.module').then(m => m.SudokuModule)
   }
+
 ];
