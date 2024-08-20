@@ -1,16 +1,22 @@
 import {Component, OnInit, inject, DestroyRef} from '@angular/core';
-import { AbstractControl, FormArray, FormControl, Validators} from '@angular/forms';
+import {AbstractControl, FormArray, FormControl, ReactiveFormsModule, Validators} from '@angular/forms';
 import { validNumber } from './utility/valid-number.validator';
 import { ValidationService } from './services/validation.service';
 import { SudokuLibraryService } from './services/sudoku.library.service';
 import { SudokuSolverService } from './services/sudoku.solver.service';
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
+import {NgClass} from "@angular/common";
 
 @Component({
   selector: 'app-root',
   templateUrl: './sudoku.component.html',
-  standalone: false,
+  styleUrl: 'sudoku.component.css',
+  standalone: true,
 
+  imports: [
+    ReactiveFormsModule,
+    NgClass
+  ]
 })
 export class SudokuComponent implements OnInit {
 

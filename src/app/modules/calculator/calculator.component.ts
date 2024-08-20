@@ -1,11 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import {FormControl, ReactiveFormsModule} from '@angular/forms';
+import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-root',
   templateUrl: './calculator.component.html',
-  standalone: false,
+  standalone: true,
 
+  imports: [
+    ReactiveFormsModule,
+    NgIf,
+    NgForOf
+  ]
 })
 export class CalculatorComponent implements OnInit {
 

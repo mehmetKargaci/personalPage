@@ -28,11 +28,11 @@ export const routes: Routes = [
   },
   {
     path: "calculator",
-    loadChildren: () => import('./modules/calculator/calc.module').then(m => m.CalcModule)
+    loadChildren: () => import('./modules/calculator/calculator-routing.module').then(m => m.CalculatorRoutingModule)
   },
   {
     path: "sudoku",
-    loadChildren: () => import('./modules/sudoku/sudoku.module').then(m => m.SudokuModule)
+    loadChildren: () => import('./modules/sudoku/sudoku-routing.module').then(m => m.SudokuRoutingModule)
   }
 
 ];

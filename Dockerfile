@@ -17,6 +17,6 @@ FROM nginx:1.25.4-alpine
 # Copy custom Nginx configuration
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 # Copy the built Angular app from the 'build' stage to Nginx's serve directory
-COPY --from=build /app/dist/lid/browser /usr/share/nginx/html
+COPY --from=build /app/dist/personal-page/browser /usr/share/nginx/html
 # Expose port 80 to be accessible from the outside
 EXPOSE 80
