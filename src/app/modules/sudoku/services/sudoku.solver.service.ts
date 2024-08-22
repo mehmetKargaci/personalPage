@@ -23,23 +23,21 @@ export class SudokuSolverService{
   }
 
   solve(board:number[]):boolean {
-
     const emtyCellIndex = this.findEmptyCell(board);
-    if(emtyCellIndex === -1){ return true;
-
-    }
+    if(emtyCellIndex === -1){ return true}
     for (let num = 1; num <= 9 ; num++){
       if(this.validationService.validate(board).length === 0 ){
-        board[emtyCellIndex]= num;
+        board[emtyCellIndex] = num;
         if(this.solve(board )){
           return true;
         }
-        board[emtyCellIndex]= 0;
+        board[emtyCellIndex] = 0;
       }
 
     }
     return false;
   }
+
   findEmptyCell(puzzle: number[]): number {
     return puzzle.indexOf(0); // Find the first empty cell
   }

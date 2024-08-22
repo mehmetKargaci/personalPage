@@ -33,6 +33,11 @@ export const routes: Routes = [
   {
     path: "sudoku",
     loadChildren: () => import('./modules/sudoku/sudoku-routing.module').then(m => m.SudokuRoutingModule)
-  }
+  },
+  {
+    path:"",
+    redirectTo: "about",
+    pathMatch:"full"
+  },
 
 ];

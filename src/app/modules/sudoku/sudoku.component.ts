@@ -5,7 +5,8 @@ import { ValidationService } from './services/validation.service';
 import { SudokuLibraryService } from './services/sudoku.library.service';
 import { SudokuSolverService } from './services/sudoku.solver.service';
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
-import {NgClass} from "@angular/common";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
+
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,9 @@ import {NgClass} from "@angular/common";
 
   imports: [
     ReactiveFormsModule,
-    NgClass
+    NgClass,
+    NgIf,
+    NgForOf
   ]
 })
 export class SudokuComponent implements OnInit {
@@ -24,7 +27,6 @@ export class SudokuComponent implements OnInit {
   private sudokuLibraryService = inject (SudokuLibraryService);
   private sudokuSolverService = inject (SudokuSolverService);
   private destroyRef = inject(DestroyRef);
-
 
   dataRow = Array.from(
     Array(81)
@@ -43,12 +45,14 @@ export class SudokuComponent implements OnInit {
     })
   );
 
+
   invalidCellIndexes : number[] = [];
   isValid = false;
   difficultyLevel = this.sudokuLibraryService.library;
   controlValues :any[] = [];
   isAutoSolved = false;
   solutionTime: number | undefined;
+
 
 
 
@@ -76,7 +80,6 @@ export class SudokuComponent implements OnInit {
         if (!isNaN(parsedValue) && (parsedValue >= 1 && parsedValue <= 9 )) {
           control.disable();
           this.isAutoSolved = false;
-
         }
       }
 
@@ -109,9 +112,10 @@ export class SudokuComponent implements OnInit {
   get controls() {
     return this.sudokuFormArray.controls;
   }
-  setLevel(level: string){
+  setLevel(level: string ){
     this.reset();
-    this.sudokuFormArray.setValue(this.difficultyLevel.easy);
+    // @ts-ignore
+    this.sudokuFormArray.setValue(this.difficultyLevel[level]);
     this.ready();
   }
 }

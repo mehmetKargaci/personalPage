@@ -5,12 +5,18 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: per
-    image: mkargaci/per:1.0.1
+    image: dtuncbilek/per:1.0.2
     restart: unless-stopped
     ports:
       - "4242:80"
 
-# first use this...
+#first use this
+# first off all do must docker-desktop app run. and then check the image version as amd64
+# docker build --platform linux/amd64 -t dtuncbilek/per:1.0.2 .
+# docker push dtuncbilek/per:1.0.2
+
+
+# if doesnt work use this...
 # docker compose build
-# docker push mkargaci/per:1.0.1
+# docker push dtuncbilek/per:1.0.1
 
