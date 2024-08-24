@@ -28,6 +28,13 @@ export class SudokuComponent implements OnInit {
   private sudokuSolverService = inject (SudokuSolverService);
   private destroyRef = inject(DestroyRef);
 
+  invalidCellIndexes : number[] = [];
+  isValid = false;
+  difficultyLevel = this.sudokuLibraryService.library;
+  controlValues :any[] = [];
+  isAutoSolved = false;
+  solutionTime: number | undefined;
+
   dataRow = Array.from(
     Array(81)
       .fill('')
@@ -44,17 +51,6 @@ export class SudokuComponent implements OnInit {
     return new FormControl('', [validNumber])
     })
   );
-
-
-  invalidCellIndexes : number[] = [];
-  isValid = false;
-  difficultyLevel = this.sudokuLibraryService.library;
-  controlValues :any[] = [];
-  isAutoSolved = false;
-  solutionTime: number | undefined;
-
-
-
 
   ngOnInit(): void {
     this.sudokuFormArray.valueChanges.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((array) => {

@@ -1,23 +1,26 @@
 <div class="mt-10 ml-4">
   <h2 class="text-2xl text-sky-600 font-semibold">My Projects</h2>
-  <div class="flex flex-col mt-8 gap-8 items-center mb-10 md:flex-row">
-    <div class="flex flex-row justify-center border-2 border-stone-400 size-72 shadow cursor-pointer">
-      <a href="https://lebenindeutschland.mehmetkargaci.de/" target="_blank" class="cursor-pointer text-lg font-medium text-sky-500">
-        <img class="h-42 rounded" src="assets/lebenin.png">
-        <label class="flex flex-col justify-start items-center mb-2 cursor-pointer mt-24">Leben in Deutschland App</label>
-      </a>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 ">
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <img src="assets/lebenin.png" alt="tech" class="w-full h-72 object-cover"/>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-sky-600">Leben in Deutschland App</h3>
+        <p class="text-gray-600">Leben in Deutscland and Einburgerung Test Preperation Angular Web Application.</p>
+      </div>
     </div>
-    <div class="flex flex-col justify-center items-center border-2 border-stone-400 size-72">
-      <a routerLink="/calculator"  class="cursor-pointer text-lg font-medium mt-2 text-sky-500">
-        <img class="rounded size-64" src="assets/calculator.png">
-        <label class="flex flex-col justify-center items-center mb-2 cursor-pointer">Calculator App</label>
-      </a>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <img src="assets/calculator.png" alt="calculator" class="w-full h-72 object-cover"/>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-sky-600">Calculator</h3>
+        <p class="text-gray-600">Angular Calculator Web Application.</p>
+      </div>
     </div>
-    <div class="flex flex-col justify-center items-center border-2 border-stone-400 size-72">
-      <a routerLink="/sudoku" class="cursor-pointer text-lg font-medium mt-2 text-sky-500">
-        <img class="rounded size-64" src="assets/sudoku.png">
-        <label class="flex flex-col justify-center items-center mb-2 cursor-pointer">Sudoku App</label>
-      </a>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <img src="assets/sudoku.png" alt="sudoku" class="w-full h-72 object-cover"/>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-sky-600">Sudoku</h3>
+        <p class="text-gray-600">Angular Sudoku Web Application.</p>
+      </div>
     </div>
   </div>
 </div>
