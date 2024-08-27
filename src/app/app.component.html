@@ -1,15 +1,14 @@
 <div class="flex">
-  <div class="w-1/4 h-screen text-sm lg:w-1/6 bg-stone-600 sticky top-0 p-4">
+  <div class="w-40 sm:w-64 h-screen text-sm  bg-stone-600 sticky top-0 px-2">
     <img class="rounded-full object-cover bg-black" src="./assets/picture.png" alt="my_pic" >
-
-    <ul class="list-none mt-16 text-sm md:ml-10 lg:text-2xl " >
-      <li class="mb-10"><a class="text-blue-400 font-bold text-lg hover:text-white" routerLink="about" routerLinkActive="text-white">About</a></li>
-      <li class="mb-10"><a class="text-blue-400 font-bold text-lg hover:text-white" routerLink="experience" routerLinkActive="text-white">Experience</a></li>
-      <li class="mb-10"><a class="text-blue-400 font-bold text-lg over:text-white" routerLink="skills" routerLinkActive="text-white">Skills</a></li>
-      <li class="mb-10"><a class="text-blue-400 font-bold text-lg" routerLink="interests" routerLinkActive="text-white">Interests</a></li>
-      <li class="mb-2"><a class="text-blue-400 font-bold text-lg hover:text-white" routerLink="my-projects" routerLinkActive="text-white" [routerLinkActiveOptions]="{ exact: true }">My Projects</a></li>
-    </ul>
-  </div>
+      <ul class="list-none mt-16 text-sm mr-1 ml-1 md:ml-2 md:text-2xl " >
+        <li class="mb-10"><a class="text-blue-400 font-bold text-lg hover:text-white" routerLink="about" routerLinkActive="text-white">About</a></li>
+        <li class="mb-10"><a class="text-blue-400 font-bold text-lg hover:text-white" routerLink="experience" routerLinkActive="text-white">Experience</a></li>
+        <li class="mb-10"><a class="text-blue-400 font-bold text-lg over:text-white" routerLink="skills" routerLinkActive="text-white">Skills</a></li>
+        <li class="mb-10"><a class="text-blue-400 font-bold text-lg" routerLink="interests" routerLinkActive="text-white">Interests</a></li>
+        <li class="mb-2"><a class="text-blue-400 font-bold text-lg hover:text-white" routerLink="my-projects" routerLinkActive="text-white" [routerLinkActiveOptions]="{ exact: true }">My Projects</a></li>
+      </ul>
+    </div>
   <div class="bg-white p-4">
     <div>
       <router-outlet></router-outlet>
